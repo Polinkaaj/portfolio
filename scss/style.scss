@@ -1,0 +1,1213 @@
+@font-face {
+	font-family: 'MakLight';
+	src: url('/font/MAK.eot');
+	/* IE9 Compat Modes */
+	src: url('MAK.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('/font/MAK.woff') format('woff'),
+		/* Modern Browsers */
+		url('/font/MAK.ttf') format('truetype');
+	/* Safari, Android, iOS */
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import 'nullStyle';
+
+%container {
+	margin: 0 auto;
+	max-width: 1362px;
+	height: auto;
+	padding: 0;
+}
+
+$violet: #382370;
+$purple: #6C0092;
+$light-violet: #CDCCE8;
+
+%font-menu {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 48px;
+}
+
+%font-razdel {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 50px;
+	line-height: 170%;
+	text-transform: uppercase;
+}
+
+%font-purple {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 48px;
+	display: flex;
+	align-items: center;
+	color: #6C0092;
+
+}
+
+@mixin font-mak ($size, $line) {
+	font-family: 'Mak';
+	font-style: normal;
+	font-weight: 300;
+	font-size: $size;
+	line-height: $line;
+}
+
+@mixin font-montserrat ($size, $line) {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 300;
+	font-size: $size;
+	line-height: $line;
+}
+
+@mixin flex ($direction) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: wrap;
+}
+
+
+header {
+	@extend %container;
+	@include flex(row);
+	justify-content: space-between;
+	align-items: center;
+	margin: 32px auto;
+
+	p {
+		color: $violet;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 24px;
+
+		.ru {
+			font-weight: bold;
+		}
+	}
+}
+
+.first-screen {
+	@extend %container;
+	@include flex(column);
+	margin-bottom: 170px;
+}
+
+.for-grid {
+	display: grid;
+	grid-template-columns: 434px 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 30px;
+
+	nav {
+		a {
+			color: $violet;
+		}
+	}
+
+	img {
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+}
+
+h1 {
+	@include font-mak(179.5px, 206px);
+	grid-column-start: 2;
+	grid-column-end: 4;
+	margin-left: -6.5px;
+	margin-bottom: 4px;
+}
+
+h2 {
+	@include font-mak(199px, 239px);
+	text-align: right;
+	margin-right: -6px;
+	margin-top: -50px;
+}
+
+nav {
+	a {
+		@include flex(column);
+		@extend %font-menu;
+		margin-bottom: 12px;
+	}
+}
+
+a:nth-child(1) {
+	margin-top: -15px;
+}
+
+.btn1 {
+	border: 2px solid $violet;
+	background: transparent;
+	text-transform: uppercase;
+	@include font-mak(44px, 170%);
+	color: $violet;
+	height: 144px;
+	width: 432px;
+}
+
+.btn1:hover {
+	background-color: $violet;
+	color: $light-violet
+}
+
+.about-me {
+	@extend %container;
+	display: flex;
+	align-items: center;
+
+	img {
+		margin-top: 400px;
+	}
+
+	&__text {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 29px;
+		color: #6C0092;
+		margin-left: 116px;
+		margin-top: -100px;
+	}
+
+}
+
+.zagolovok {
+	position: absolute;
+	z-index: 1;
+	@include font-montserrat(85px, 102px);
+	text-indent: 227px;
+	margin-left: 227px;
+	margin-top: -750px;
+
+	span {
+		@include font-mak(102px, 227px);
+	}
+}
+
+.zagolovok-dop {
+	position: absolute;
+	z-index: 1;
+	@include font-montserrat(85px, 102px);
+	margin-left: 227px;
+	margin-top: -550px;
+
+	span {
+		@include font-mak(102px, 227px);
+	}
+}
+
+.what-i-do {
+	@extend %container;
+	margin-top: -160px;
+	margin-bottom: 200px;
+
+	&__text {
+		@include font-mak(102px, 122px);
+		text-indent: 235px;
+		color: $purple;
+	}
+
+	.what-h3 {
+		margin-left: 463px;
+	}
+
+	.zagol {
+		width: 1000px;
+		margin-left: 175px;
+	}
+}
+
+h3 {
+	@extend %font-razdel;
+	margin-left: 235px;
+	margin-bottom: 60px
+}
+
+.what-for-flex {
+	@include flex(row);
+	justify-content: flex-start
+}
+
+.nomer {
+	@include font-montserrat(40px, 42px);
+	color: $light-violet;
+	margin-bottom: 201px;
+}
+
+.nomer:nth-child(1) {
+	margin-top: 53px
+}
+
+.nomer:nth-child(4) {
+	margin-top: 203px
+}
+
+.nomer:nth-child(5) {
+	margin-top: -121px
+}
+
+.how-i-work {
+	@extend %container;
+	padding-left: 225px;
+	padding-bottom: 200px;
+
+	&__i {
+		padding-left: 200px
+	}
+}
+
+h4 {
+	@include font-montserrat(20px, 31px);
+	color: $purple;
+}
+
+h5 {
+	@include font-mak(40px, 62px);
+	color: $violet;
+}
+
+.how-for-flex {
+	@include flex(row);
+	justify-content: flex-start;
+	padding-left: 9px;
+}
+
+.slider {
+	width: 350px;
+	margin-top: 40px;
+
+	&__el {
+		width: 330px;
+		height: 220px;
+		background-color: #f5f5f5;
+		@include flex(column);
+		justify-content: center;
+		align-items: center
+	}
+
+	p {
+		@include font-montserrat(15px, 23px);
+		color: $violet;
+		width: 70%
+	}
+}
+
+.slick-prev,
+.slick-next {
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	cursor: pointer;
+	color: transparent;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+	color: transparent;
+	outline: none;
+	background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+	color: $violet;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+	color: $light-violet;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	font-family: 'Montserrat';
+	font-size: 20px;
+	line-height: 1;
+	opacity: .75;
+	color: $light-violet;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+	left: -25px;
+}
+
+[dir='rtl'] .slick-prev {
+	right: -25px;
+	left: auto;
+}
+
+.slick-prev:before {
+	content: '◀';
+}
+
+[dir='rtl'] .slick-prev:before {
+	content: '▶';
+}
+
+.slick-next {
+	right: -25px;
+}
+
+[dir='rtl'] .slick-next {
+	right: auto;
+	left: -25px;
+}
+
+.slick-next:before {
+	content: '▶';
+}
+
+[dir='rtl'] .slick-next:before {
+	content: '◀';
+}
+
+.portfolio {
+	@extend %container;
+
+	h3 {
+		padding-left: 224px;
+	}
+}
+
+
+.tabs {
+	display: flex;
+	flex-direction: column;
+}
+
+.tabs-nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tabs-nav__item {
+	cursor: pointer;
+	flex: 1;
+	@include font-mak(60px, 72px);
+	color: $violet;
+
+	span {
+		@include font-montserrat(30px, 36px);
+		color: $light-violet;
+	}
+}
+
+.tabs-nav__item:nth-child(1) {
+	margin-left: -80px;
+}
+
+.tabs-nav__item:nth-child(2) {
+	margin-left: 0;
+}
+
+.tabs-nav {
+	@include flex(column);
+	align-items: center;
+
+}
+
+.tabs-for-flex {
+	@include flex(row);
+	align-items: flex-start;
+
+	.tabs-nav__item:nth-child(1) {
+		margin-left: 0px;
+	}
+}
+
+.tabs-nav__item.is-active {
+	border: 7px solid;
+	border-color: #CDCCE8;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+
+.tabs-nav__item {
+	margin-left: 100px;
+	margin-bottom: 30px;
+}
+
+.tab {
+	display: none;
+	border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-ms-border-radius: 0 0 5px 5px;
+	-o-border-radius: 0 0 5px 5px;
+
+	img {
+		padding: 40px;
+	}
+}
+
+.tab.is-active {
+	display: block;
+}
+
+.knopka {
+	background-color: $light-violet;
+	height: 50vh;
+	min-width: 1360px;
+}
+
+.last-btn {
+	@include flex(row);
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.line {
+	border-bottom: 1px solid #CDCCE8;
+	width: 70%;
+	@extend %container;
+	margin-bottom: 30px;
+}
+
+.footer {
+	background-color: $violet;
+	height: 50%;
+
+	&__content {
+		@extend %container;
+		@include flex(row);
+		justify-content: space-between;
+		align-items: center;
+		height: 80%;
+
+		a {
+			color: $light-violet;
+			font-size: 60px;
+		}
+	}
+
+	&__text {
+		@include flex(row);
+		justify-content: center;
+		@include font-mak(14px, 22px);
+		color: $light-violet;
+	}
+}
+
+.foot-links {
+	@include flex(row);
+	width: 40%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+	overflow-y: scroll;
+
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	min-height: 500px;
+	background-color: $light-violet;
+	padding: 40px;
+	//.modal__close&__close:;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+
+	&__close {
+		position: absolute;
+		top: -10px;
+		right: -35px;
+		font-size: 40px;
+		line-height: 40px;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	&__subtitle {
+		@include font-mak(30px, 35px);
+		text-align: center;
+	}
+
+	&__descr {
+		text-align: center;
+		@include font-montserrat(20px, 25px)
+	}
+}
+
+.modal_mini {
+	min-height: 70px;
+}
+
+#consultation,
+#thanks {
+	display: none;
+}
+
+.feed-form {
+	margin-top: 35px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+
+}
+
+label {
+	@include font-montserrat(17px, 30px)
+}
+
+::placeholder {
+	color: $light-violet;
+	@include font-montserrat(17px, 30px)
+}
+
+input {
+	border: none;
+	height: 50px;
+	background-color: #fff;
+	margin-bottom: 15px;
+	border: 1px solid $violet;
+	padding: 0 20px;
+	font-size: 14px;
+}
+
+input:nth-child(3) {
+	margin-bottom: 35px;
+}
+
+.checkbox-other {
+	display: block;
+	margin: 30px 0;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	@include font-montserrat(17px, 15px)
+}
+
+.checkbox-other input[type=checkbox] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+.checkbox-other span {
+	display: inline-block;
+	position: relative;
+	padding: 0 0 0 35px;
+	line-height: 30px;
+}
+
+.checkbox-other span:before {
+	content: "";
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: background 0.3s ease;
+	background: url('/img/checkbox1.png') 0 0 no-repeat;
+	-webkit-transition: background 0.3s ease;
+	-moz-transition: background 0.3s ease;
+	-ms-transition: background 0.3s ease;
+	-o-transition: background 0.3s ease;
+}
+
+/* Checked */
+.checkbox-other input[type=checkbox]:checked+span:before {
+	background-image: url('/img/checkbox2.svg');
+}
+
+.selectdiv {
+	position: relative;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+.selectdiv:after {
+	content: '<>';
+	@include font-montserrat(15px, 18px);
+	color: $violet;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	right: 11px;
+	top: 18px;
+	padding: 0 0 2px;
+	border-bottom: 1px solid $violet;
+	position: absolute;
+	pointer-events: none;
+}
+
+.selectdiv select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	@include font-montserrat(15px, 18px);
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: 50px;
+	float: right;
+	margin: 5px 0px;
+	padding: 0px 24px;
+	color: $violet;
+	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid $violet;
+	-ms-word-break: normal;
+	word-break: normal;
+}
+
+@media(max-width: 1391px) {
+
+	header,
+	.first-screen,
+	.about-me,
+	.footer,
+	.portfolio,
+	.what-i-do {
+		padding: 0 1%;
+		min-width: 1360px;
+	}
+
+	h1 {
+		@include font-mak(174.5px, 206px);
+	}
+
+	.zagolovok,
+	.zagolovok-dop {
+		@include font-montserrat(80px, 97px);
+		min-width: 1099px;
+
+		span {
+			@include font-mak(97px, 222px);
+		}
+	}
+
+	.for-grid {
+		display: grid;
+		grid-template-columns: 434px 1fr 1.5fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 30px;
+
+		button {
+			width: 100%;
+		}
+	}
+
+}
+
+@media(max-width: 1134px) {
+	.modal {
+		width: 70%;
+	}
+
+	.how-i-work {
+		min-width: 1134px;
+	}
+}
+
+@media(max-width: 768px) {
+
+	header,
+	.first-screen,
+	.about-me,
+	.footer,
+	.portfolio,
+	.what-i-do,
+	.knopka {
+		min-width: 1600px;
+	}
+
+	h1 {
+		margin-top: 20px;
+		@include font-mak(213px, 206px);
+	}
+
+	h2 {
+		@include font-mak(250px, 239px);
+		margin-top: 0px;
+	}
+
+	.for-grid {
+		display: grid;
+		grid-template-columns: 490px 1fr 2fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 30px;
+
+		img {
+			width: 100%;
+		}
+
+		button {
+			width: 100%;
+			height: 85%;
+		}
+	}
+
+	nav {
+		a {
+			margin-bottom: 27px;
+		}
+	}
+
+	.about-me {
+		img {
+			width: 35%;
+		}
+	}
+
+	.what-i-do {
+		margin-top: -50px;
+	}
+
+	.zagolovok-dop {
+		margin-left: 400px;
+	}
+
+	.slider {
+		width: 500px;
+	}
+
+	.how-for-flex {
+		justify-content: space-between;
+		width: 130%;
+		padding-left: 100px;
+	}
+
+	.how-i-work {
+		padding-left: 0px;
+	}
+
+	.tab {
+		img {
+			padding: 75px;
+		}
+	}
+
+	.footer,
+	.knopka {
+		height: 120%;
+	}
+
+	.footer__text {
+		@include font-mak(20px, 22px);
+	}
+}
+
+@media(max-width:540px) {
+	header {
+
+		img {
+			width: 10%;
+		}
+
+		p {
+			a {
+				font-size: 50px;
+				line-height: 54px;
+			}
+		}
+	}
+
+	input {
+		height: 120px;
+	}
+
+	.selectdiv:after {
+		@include font-montserrat(40px, 42px);
+	}
+
+	.selectdiv select {
+		@include font-montserrat(40px, 42px);
+		height: 100px;
+	}
+
+	.for-grid {
+		display: grid;
+		grid-template-columns: 800px 735px;
+		grid-template-rows: 713px 1fr 1fr;
+		gap: 50px;
+
+		nav {
+			height: 713px;
+			@include flex(column);
+			justify-content: center;
+
+			a {
+				@include font-montserrat(80px, 60px);
+				margin-bottom: 200px;
+			}
+
+			a:last-child {
+				margin-bottom: 0px;
+			}
+		}
+
+		img {
+			grid-column-start: 1;
+			grid-row-start: 1;
+			grid-row-end: 2;
+			width: 90%;
+			justify-self: center;
+			align-self: center;
+		}
+
+		button {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: 2;
+			margin-top: 60px;
+			width: 70%;
+			align-self: center;
+			justify-self: center;
+		}
+
+		nav {
+			grid-column-start: 2;
+		}
+	}
+
+	::placeholder {
+
+		@include font-montserrat(50px, 60px)
+	}
+
+	.btn1 {
+		@include font-mak(100px, 170%);
+		height: 400px;
+		width: 800px;
+	}
+
+	h1 {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		@include font-mak(260px, 290px);
+		justify-self: center
+	}
+
+
+	h2 {
+		@include font-mak(260px, 300px);
+		text-align: center;
+	}
+
+	.zagolovok,
+	.zagolovok-dop {
+		@include font-montserrat(130px, 138px);
+		min-width: 1557px;
+		margin-left: 30px;
+
+		span {
+			@include font-mak(134px, 252px);
+		}
+	}
+
+	.zagolovok-dop {
+		margin-top: -400px;
+	}
+
+	.about-me {
+		img {
+			margin-top: 900px;
+			width: 100%;
+		}
+
+		&__text {
+			font-size: 60px;
+			line-height: 70px;
+			color: #6C0092;
+			margin-left: 50px;
+			margin-top: 700px;
+		}
+	}
+
+	.what-i-do {
+		margin-top: 400px;
+		//margin-bottom: 200px;
+
+		&__text {
+			@include font-mak(120px, 122px);
+			text-indent: 235px;
+			color: $purple;
+		}
+
+		.what-h3 {
+			margin-left: 463px;
+		}
+
+		.zagol {
+			width: 1450px;
+			margin-left: 38px;
+		}
+	}
+
+	h3 {
+		font-size: 70px;
+		line-height: 170%;
+	}
+
+	.how-for-flex {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.slider {
+		width: 1000px;
+
+		.slider__el {
+			height: 240%;
+			width: 100%
+		}
+
+		h5 {
+			@include font-mak(100px, 112px);
+		}
+
+		p {
+			@include font-montserrat(50px, 51px);
+		}
+	}
+
+	.modal {
+		&__subtitle {
+			@include font-mak(80px, 35px);
+			text-align: center;
+		}
+	}
+
+	label {
+		@include font-montserrat(40px, 50px)
+	}
+
+	h4 {
+		@include font-montserrat(50px, 51px);
+	}
+
+	.how-i-work__i {
+		padding-top: 70px;
+
+		padding-left: 0px;
+	}
+
+	.tabs-nav__item {
+		@include font-mak(100px, 110px);
+	}
+
+	.tabs-nav__item:nth-child(2) {
+		margin-left: 20px;
+	}
+
+
+
+	.tabs-for-flex {
+		.tabs-nav__item:nth-child(1) {
+			margin-left: 60px;
+		}
+	}
+
+	.tab {
+		padding: 0px;
+
+		img {
+			width: 45%;
+		}
+	}
+
+	.footer__text {
+		@include font-mak(60px, 72px);
+	}
+
+	.footer__content {
+		justify-content: space-around;
+	}
+
+	.checkbox-other {
+		@include font-montserrat(50px, 70px)
+	}
+
+	.footer {
+
+
+		.logo {
+			width: 15%;
+		}
+
+		a {
+			font-size: 110px;
+		}
+
+	}
+}
+
+@media(max-width:400px) {
+
+	.first-screen {
+		min-width: 1400px;
+	}
+
+	h2 {
+		@include font-mak(210px, 300px);
+	}
+
+	.zagolovok,
+	.zagolovok-dop {
+		margin-left: 0px;
+	}
+
+	.about-me {
+		img {
+			width: 40%;
+		}
+	}
+
+	.about-me__text {
+		font-size: 45px;
+		line-height: 52px;
+		width: 60%;
+	}
+
+	.for-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 2fr 1fr 1fr;
+		gap: 50px;
+	}
+
+
+	.slider {
+		width: 800px;
+		padding-left: 0px;
+
+
+	}
+
+	.zagol {
+		max-width: 1000px;
+	}
+
+	.zagolovok,
+	.zagolovok-dop {
+		@include font-montserrat(100px, 118px);
+		min-width: 1557px;
+		margin-left: 30px;
+
+		span {
+			@include font-mak(104px, 232px);
+		}
+	}
+
+	.how-for-flex {
+		max-width: 1000px;
+	}
+
+	header,
+	.zagolovok,
+	.zagolovok-dop,
+	.for-grid,
+	.first-screen,
+	.about-me,
+	.portfolio,
+	.what-i-do,
+	h2 {
+		min-width: 1300px;
+	}
+
+	.footer,
+	.knopka,
+	.tabs__content {
+		min-width: 1331px;
+	}
+}
+
+@media(max-width:333px) {
+
+	header,
+	.zagolovok,
+	.zagolovok-dop,
+	.for-grid,
+	.first-screen,
+	.about-me,
+	.portfolio,
+	.what-i-do,
+	h2 {
+		min-width: 1200px;
+	}
+
+	.footer,
+	.knopka,
+	.tabs__content {
+		min-width: 1232px;
+	}
+
+	h1,
+	h2 {
+		@include font-mak(230px, 290px);
+	}
+
+	h2 {
+		@include font-mak(190px, 290px);
+	}
+
+	.zagolovok,
+	.zagolovok-dop {
+		@include font-montserrat(90px, 118px);
+
+	}
+}
