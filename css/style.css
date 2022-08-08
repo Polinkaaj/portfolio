@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 @font-face {
   font-family: 'MakLight';
-  src: url("/font/MAK.eot");
+  src: url("font/MAK.eot");
   /* IE9 Compat Modes */
-  src: url("MAK.eot?#iefix") format("embedded-opentype"), url("/font/MAK.woff") format("woff"), url("/font/MAK.ttf") format("truetype");
+  src: url("MAK.eot?#iefix") format("embedded-opentype"), url("font/MAK.woff") format("woff"), url("font/MAK.ttf") format("truetype");
   /* Safari, Android, iOS */
   font-style: normal;
   font-weight: normal;
